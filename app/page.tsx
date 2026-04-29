@@ -60,7 +60,7 @@ export default function Home() {
             </h2>
 
             <p className="bg-white rounded-full px-4 py-2 text-sm shadow inline-block">
-              Se o dia for corrido, não esquece: você continua sendo a melhor parte dele ❤️
+              Que Deus abençoe seu dia e cuide de cada detalhe dele 💖
             </p>
           </div>
 
@@ -129,7 +129,7 @@ export default function Home() {
             {/* texto */}
             <p className="text-xl font-bold text-pink-500">
               {tipo === "boa"
-                ? "Bem e Linda 💅💅"
+                ? "Que Deus abençoe seu dia e cuide de cada detalhe dele 💖👐🙏"
                 : tipo === "ruim"
                   ? "Nam, coragem 💖"
                   : "Fofoca é com ela mesmo 🤣🤣"}
