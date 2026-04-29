@@ -56,7 +56,7 @@ export default function Home() {
             </h1>
 
             <h2 className="text-5xl font-extrabold text-pink-500 mb-3 tracking-wide">
-              Flor do Dia!
+              Perfeição!
             </h2>
 
             <p className="bg-white rounded-full px-4 py-2 text-sm shadow inline-block">
