@@ -1,0 +1,44 @@
+<svg width="100%" height="100%" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Gradiente base -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE4EC"/>
+      <stop offset="100%" stop-color="#FFD1E6"/>
+    </linearGradient>
+
+    <!-- Blur -->
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="390" height="844" fill="url(#bgGradient)" />
+
+  <!-- manchas suaves -->
+  <circle cx="80" cy="120" r="120" fill="#FFB6D9" opacity="0.4" filter="url(#blur)" />
+  <circle cx="320" cy="700" r="140" fill="#FFC1E3" opacity="0.4" filter="url(#blur)" />
+  <circle cx="300" cy="150" r="90" fill="#FFD6EB" opacity="0.3" filter="url(#blur)" />
+
+  <!-- estrelas -->
+  <g fill="#FFD84D">
+    <polygon points="50,300 55,315 70,315 58,325 63,340 50,330 37,340 42,325 30,315 45,315"/>
+    <polygon points="340,250 345,260 355,260 347,268 350,280 340,272 330,280 333,268 325,260 335,260"/>
+  </g>
+
+  <!-- corações -->
+  <g fill="#FF6FA5">
+    <path d="M80 500 C80 480,110 480,110 500 C110 520,80 540,80 560 C80 540,50 520,50 500 C50 480,80 480,80 500Z"/>
+    <path d="M300 600 C300 585,320 585,320 600 C320 615,300 630,300 645 C300 630,280 615,280 600 C280 585,300 585,300 600Z"/>
+  </g>
+
+  <!-- detalhes pontinhos -->
+  <g fill="#FF9FC8">
+    <circle cx="30" cy="200" r="3"/>
+    <circle cx="360" cy="400" r="3"/>
+    <circle cx="200" cy="100" r="2"/>
+    <circle cx="150" cy="700" r="2"/>
+  </g>
+
+</svg>

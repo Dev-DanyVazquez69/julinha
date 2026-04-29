@@ -30,8 +30,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 via-pink-100 to-pink-200 px-4 py-6">
-
+    <main className="min-h-screen flex items-center justify-center bg-[url('/bg.svg')] bg-cover bg-center px-4 py-6">
       {/* confete */}
       {confete && (
         <div className="absolute inset-0 pointer-events-none text-center text-6xl animate-ping">
@@ -40,62 +39,69 @@ export default function Home() {
       )}
 
       {/* CARD */}
-      <div className="w-full max-w-sm h-[92vh] bg-white/60 backdrop-blur-md rounded-[32px] shadow-2xl flex flex-col justify-between p-5 relative">
+      <div className="relative w-full max-w-sm h-[92vh] rounded-[32px] shadow-2xl flex flex-col justify-between p-5 overflow-hidden">
 
-        {/* topo */}
-        <div className="text-center mt-2">
-          <h1 className="text-2xl font-bold text-purple-800">
-            Bom dia,
-          </h1>
+        {/* camada de background dentro do card */}
+        <div className="absolute inset-0 bg-[url('/bg.svg')] bg-contain bg-center bg-no-repeat opacity-30" />
+        {/* camada branca translúcida (efeito vidro) */}
+        <div className="absolute inset-0 bg-white/70 backdrop-blur-md" />
 
-          <h2 className="text-5xl font-extrabold text-pink-500 mb-3 tracking-wide">
-            Flor do Dia!
-          </h2>
+        {/* conteúdo real */}
+        <div className="relative z-10 flex flex-col justify-between h-full">
 
-          <p className="bg-white rounded-full px-4 py-2 text-sm shadow inline-block">
-            Se o dia for corrido, não esquece: você continua sendo a melhor parte dele ❤️
-          </p>
-        </div>
+          {/* topo */}
+          <div className="text-center mt-2">
+            <h1 className="text-2xl font-bold text-purple-800">
+              Bom dia,
+            </h1>
 
-        {/* meio */}
-        <div className="text-center flex flex-col gap-6 mt-4">
+            <h2 className="text-5xl font-extrabold text-pink-500 mb-3 tracking-wide">
+              Flor do Dia!
+            </h2>
 
-          <h3 className="text-lg font-semibold text-gray-700">
-            Você está bem?
-          </h3>
-
-          <div className="flex flex-col gap-3">
-
-            {/* SIM */}
-            <button
-              onClick={handleSim}
-              className="w-full bg-green-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md active:scale-95 transition"
-            >
-              😊 Sim, tô bem!
-            </button>
-
-            {/* NÃO */}
-            <button
-              onClick={handleNao}
-              className="w-full bg-red-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md border-2 border-dashed border-red-300 active:scale-95 transition"
-            >
-              😢 Não, não tô
-            </button>
-
+            <p className="bg-white rounded-full px-4 py-2 text-sm shadow inline-block">
+              Se o dia for corrido, não esquece: você continua sendo a melhor parte dele ❤️
+            </p>
           </div>
-        </div>
 
-        {/* rodapé estilizado */}
-        <div className="flex flex-col items-center gap-2 mb-2">
+          {/* meio */}
+          <div className="text-center flex flex-col gap-6 mt-4">
 
-          <button
-            onClick={handleSegredo}
-            className="text-sm text-purple-700 border-2 border-dashed border-purple-300 px-3 py-2 rounded-xl active:scale-95 transition"
-          >
-            Tenho Uma fofoca, clica aqui 😂
-          </button>
+            <h3 className="text-lg font-semibold text-gray-700">
+              Você está bem?
+            </h3>
 
-          <span className="text-xl">⬆️</span>
+            <div className="flex flex-col gap-3">
+
+              <button
+                onClick={handleSim}
+                className="w-full bg-green-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md active:scale-95"
+              >
+                😊 Sim, tô bem!
+              </button>
+
+              <button
+                onClick={handleNao}
+                className="w-full bg-red-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md border-2 border-dashed border-red-300 active:scale-95"
+              >
+                😢 Não, não tô
+              </button>
+
+            </div>
+          </div>
+
+          {/* rodapé */}
+          <div className="flex flex-col items-center gap-2 mb-2">
+            <button
+              onClick={handleSegredo}
+              className="text-sm text-purple-700 border-2 border-dashed border-purple-300 px-3 py-2 rounded-xl active:scale-95"
+            >
+              Tenho Uma fofoca, clica aqui 😂
+            </button>
+
+            <span className="text-xl">⬆️</span>
+          </div>
+
         </div>
       </div>
 
@@ -112,8 +118,8 @@ export default function Home() {
                   tipo === "boa"
                     ? "/feliz.jpg"
                     : tipo === "ruim"
-                    ? "/meme.jpg"
-                    : "/segredo.jpg"
+                      ? "/meme.jpg"
+                      : "/segredo.jpg"
                 }
                 alt="meme"
                 className="rounded-2xl w-full h-full object-cover"
@@ -125,8 +131,8 @@ export default function Home() {
               {tipo === "boa"
                 ? "Bem e Linda 💅💅"
                 : tipo === "ruim"
-                ? "Nam, coragem 💖"
-                : "Fofoca é com ela mesmo 🤣🤣"}
+                  ? "Nam, coragem 💖"
+                  : "Fofoca é com ela mesmo 🤣🤣"}
             </p>
 
             <div className="text-pink-400 text-2xl mt-2">♡</div>
