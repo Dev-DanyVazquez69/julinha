@@ -30,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 to-pink-100 px-4 py-6 overflow-hidden">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 via-pink-100 to-pink-200 px-4 py-6">
 
       {/* confete */}
       {confete && (
@@ -40,41 +40,44 @@ export default function Home() {
       )}
 
       {/* CARD */}
-      <div className="w-full max-w-sm h-[90vh] bg-white/70 backdrop-blur-md rounded-[32px] shadow-2xl flex flex-col justify-between p-5">
+      <div className="w-full max-w-sm h-[92vh] bg-white/60 backdrop-blur-md rounded-[32px] shadow-2xl flex flex-col justify-between p-5 relative">
 
         {/* topo */}
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-pink-600">
+        <div className="text-center mt-2">
+          <h1 className="text-2xl font-bold text-purple-800">
             Bom dia,
           </h1>
 
-          <h2 className="text-4xl font-black text-pink-500 mb-3">
+          <h2 className="text-5xl font-extrabold text-pink-500 mb-3 tracking-wide">
             Flor do Dia!
           </h2>
 
           <p className="bg-white rounded-full px-4 py-2 text-sm shadow inline-block">
-            Se o dia for corrido, não esquece: você continua sendo a melhor parte dele ❤️</p>
+            Se o dia for corrido, não esquece: você continua sendo a melhor parte dele ❤️
+          </p>
         </div>
 
         {/* meio */}
-        <div className="text-center flex flex-col gap-6">
+        <div className="text-center flex flex-col gap-6 mt-4">
 
-          <h3 className="text-lg font-semibold">
+          <h3 className="text-lg font-semibold text-gray-700">
             Você está bem?
           </h3>
 
           <div className="flex flex-col gap-3">
 
+            {/* SIM */}
             <button
               onClick={handleSim}
-              className="w-full bg-green-400 text-white py-4 rounded-2xl text-lg font-semibold shadow active:scale-95 transition"
+              className="w-full bg-green-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md active:scale-95 transition"
             >
               😊 Sim, tô bem!
             </button>
 
+            {/* NÃO */}
             <button
               onClick={handleNao}
-              className="w-full bg-red-400 text-white py-4 rounded-2xl text-lg font-semibold shadow active:scale-95 transition"
+              className="w-full bg-red-400 text-white py-4 rounded-2xl text-lg font-semibold shadow-md border-2 border-dashed border-red-300 active:scale-95 transition"
             >
               😢 Não, não tô
             </button>
@@ -82,34 +85,38 @@ export default function Home() {
           </div>
         </div>
 
-        {/* rodapé clicável */}
-        <button
-          onClick={handleSegredo}
-          className="text-center text-sm text-pink-500 active:scale-95 transition"
-        >
-          Tenho Uma fofoca, clica aqui😂
-        </button>
+        {/* rodapé estilizado */}
+        <div className="flex flex-col items-center gap-2 mb-2">
 
+          <button
+            onClick={handleSegredo}
+            className="text-sm text-purple-700 border-2 border-dashed border-purple-300 px-3 py-2 rounded-xl active:scale-95 transition"
+          >
+            Tenho Uma fofoca, clica aqui 😂
+          </button>
+
+          <span className="text-xl">⬆️</span>
+        </div>
       </div>
 
       {/* MODAL */}
       {modal && tipo && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center px-4 z-50">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center px-4 z-50">
 
-          <div className="relative bg-white w-full max-w-xs rounded-2xl p-4 text-center shadow-xl animate-[pop_.3s_ease]">
+          <div className="relative bg-white w-full max-w-xs rounded-3xl p-4 text-center shadow-2xl animate-[pop_.3s_ease]">
 
             {/* imagem */}
-            <div className="relative w-full h-56 mb-4">
+            <div className="w-full h-56 mb-4">
               <img
                 src={
                   tipo === "boa"
                     ? "/feliz.jpg"
                     : tipo === "ruim"
-                      ? "/meme.jpg"
-                      : "/segredo.jpg"
+                    ? "/meme.jpg"
+                    : "/segredo.jpg"
                 }
                 alt="meme"
-                className="rounded-xl w-full h-full object-cover"
+                className="rounded-2xl w-full h-full object-cover"
               />
             </div>
 
@@ -118,14 +125,16 @@ export default function Home() {
               {tipo === "boa"
                 ? "Bem e Linda 💅💅"
                 : tipo === "ruim"
-                  ? "Nam, coragem 💖"
-                  : "Fofoca é com ela mesmo 🤣🤣"}
+                ? "Nam, coragem 💖"
+                : "Fofoca é com ela mesmo 🤣🤣"}
             </p>
+
+            <div className="text-pink-400 text-2xl mt-2">♡</div>
 
             {/* fechar */}
             <button
               onClick={() => setModal(false)}
-              className="absolute -top-3 -right-3 bg-pink-400 text-white w-8 h-8 rounded-full shadow"
+              className="absolute -top-4 -right-4 bg-pink-400 text-white w-10 h-10 rounded-full shadow-lg text-xl"
             >
               ✕
             </button>
